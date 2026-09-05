@@ -28,8 +28,8 @@
     - PMCG
     - NanoTrasen
   # WD EDIT START
-  - !type:CharacterOverallTimeRequirement
-    min: 3600
+  #- !type:CharacterOverallTimeRequirement
+  #  min: 3600
   # WD EDIT END
   startingGear: WardenGear
   icon: "JobIconWarden"

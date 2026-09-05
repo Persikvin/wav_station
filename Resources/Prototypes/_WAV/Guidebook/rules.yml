@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: WavRuleset
+  name: guide-entry-rules-wav
+  text: "/ServerInfo/Guidebook/ServerRules/WavRules.xml"

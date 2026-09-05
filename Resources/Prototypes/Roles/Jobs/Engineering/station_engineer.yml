@@ -15,10 +15,10 @@
     - ZavodskoiInterstellar
     - EinsteinEngines
     - NanoTrasen
-  # WD EDIT START
-  - !type:CharacterOverallTimeRequirement
-    min: 3600
-  # WD EDIT END
+  # WAV EDIT START
+  #  - !type:CharacterOverallTimeRequirement
+  #   min: 3600
+  # WAV EDIT END
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

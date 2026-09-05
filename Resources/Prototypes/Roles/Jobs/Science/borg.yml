@@ -14,8 +14,8 @@
   spawnLoadout: false
   canHavePassport: false
   requirements:
-  - !type:CharacterOverallTimeRequirement # WWDP
-    min: 7200
+  # - !type:CharacterOverallTimeRequirement # WAV
+  #   min: 7200
   special: # WWDP random lawset
   - !type:AddComponentSpecial
     components:

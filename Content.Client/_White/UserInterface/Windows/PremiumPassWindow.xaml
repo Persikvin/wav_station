@@ -1,21 +1,21 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-            Title="WPass - Премиальный доступ для лучших"
+            Title="WavPass - Премиальный доступ для лучших"
             MinSize="600 400"
             SetSize="600 400">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
-        <TextureRect TextureScale="2 2" TexturePath="/Textures/_White/sneed.png" HorizontalAlignment="Center"/>
+        <TextureRect TextureScale="2 2" TexturePath="/Textures/_WAV/sneed.png" HorizontalAlignment="Center"/>
         <BoxContainer Orientation="Vertical">
-            <Label Text="WPass - это возможность поддержать твой любимый сервер и"/>
+            <Label Text="WavPass - это возможность поддержать твой любимый сервер и"/>
             <Label Text="и получить приятные бонусы к игре."/>
             <Label Text="Спасибо вам, что выбрали нас!"/>
-            <Label Text="Преимущества WPass над обычной игрой на сервере:"/>
+            <Label Text="Преимущества WavPass над обычной игрой на сервере:"/>
             <BoxContainer>
                 <Label Text="  ⭐ " FontColorOverride="#ffff00"/>
-                <Label Text="Доступ к эксклюзивному функционалу"/>
+                <Label Text="ВСЕ ДЕНЬГИ УЙДУТ К ПЕРСИКУ"/>
             </BoxContainer>
             <BoxContainer>
                 <Label Text=" ♔ " FontColorOverride="#ffff00"/>
-                <Label Text="Приоритет при заходе на сервер"/>
+                <Label Text="Приоритет на попадание в ролик"/>
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ♿ " FontColorOverride="#ffff00"/>
@@ -23,7 +23,7 @@
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ☄ " FontColorOverride="#ffff00"/>
-                <Label Text="Удвоенный шанс выпадения роли антагониста"/>
+                <Label Text="Удвоенный шанс выпадения вашего лота на ауке"/>
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ⚖ " FontColorOverride="#ffff00"/>
@@ -35,7 +35,7 @@
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  👍 " FontColorOverride="#ffff00"/>
-                <Label Text="И многое другое за символическую плату от 741 руб в месяц!!"/>
+                <Label Text="И многое другое за символическую плату от 220 руб в месяц!!"/>
             </BoxContainer>
         </BoxContainer>
         <Button Name="PurchaseButton" Text="Посмотреть планы" HorizontalExpand="False" />

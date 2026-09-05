@@ -23,10 +23,10 @@
     - ZavodskoiInterstellar
     - PMCG
     - NanoTrasen
-  # WD EDIT START
-  - !type:CharacterOverallTimeRequirement
-    min: 3600
-  # WD EDIT END
+  # WAV EDIT START
+  #  - !type:CharacterOverallTimeRequirement
+  #   min: 3600
+  # WAV EDIT END
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

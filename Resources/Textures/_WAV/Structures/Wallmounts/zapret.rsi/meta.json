@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "size": {
+    "x": 278,
+    "y": 273
+  },
+  "license": "Sosi",
+  "copyright": "Sosi",
+  "states": [
+    {
+      "name": "zapret"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterWav
+  name: random wavposter spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Wallmounts/posters.rsi
+      state: random_anything
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - andy
+    - baduborka
+    - bardog
+    - barotravma
+    - eyaofnew
+    - firsteya
+    - furcomp
+    - gribochki
+    - halfyes
+    - hatefurry
+    - mita
+    - notscare
+    - pinktomato
+    - pinkuborka
+    - pizza
+    - povar
+    - psyho
+    - rinworld
+    - screlochka
+    - shahter
+    - sosat14
+    - stohard
+    - tipikalsosat
+    - trogat
+    - work
+    - kalleca
+    chance: 0.95
+    rarePrototypes:
+    - PosterBroken
+    rareChance: 0.05

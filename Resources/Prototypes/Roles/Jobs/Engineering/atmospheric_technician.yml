@@ -15,8 +15,8 @@
     - EinsteinEngines
     - NanoTrasen
   # WD EDIT START
-  - !type:CharacterOverallTimeRequirement
-    min: 3600
+  #- !type:CharacterOverallTimeRequirement
+  #  min: 3600
   # WD EDIT END
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"

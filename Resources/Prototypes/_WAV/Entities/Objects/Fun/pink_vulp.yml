@@ -1,0 +1,21 @@
+- type: entity
+  parent: BasePlushie
+  id: PinkPlushieVulp
+  name: розовая плюшевая вульпа
+  description: Казалось бы причём тут Andrusha_wav...
+  components:
+    - type: Sprite
+      sprite: _WAV/Objects/Fun/pink_vulp.rsi
+      state: pinkvulp 
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_WAV/Items/nyaotandreya.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_WAV/Items/etoban.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_WAV/Items/nyaotandreya.ogg
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/_WAV/Items/etoban.ogg

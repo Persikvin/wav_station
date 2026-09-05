@@ -15,7 +15,7 @@
             </BoxContainer>
             <BoxContainer>
                 <Label Text=" ♔ " FontColorOverride="#ffff00"/>
-                <Label Text="Приоритет на ёблю в ЕРП"/>
+                <Label Text="Приоритет на попадание в ролик"/>
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ♿ " FontColorOverride="#ffff00"/>
@@ -23,7 +23,7 @@
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ☄ " FontColorOverride="#ffff00"/>
-                <Label Text="Удвоенный шанс выпадения роли пассива"/>
+                <Label Text="Удвоенный шанс выпадения вашего лота на ауке"/>
             </BoxContainer>
             <BoxContainer>
                 <Label Text="  ⚖ " FontColorOverride="#ffff00"/>

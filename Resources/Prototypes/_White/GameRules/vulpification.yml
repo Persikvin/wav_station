@@ -56,8 +56,6 @@
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
       - type: PendingVulpification
-        minInitialInfectedGrace: 300
-        maxInitialInfectedGrace: 450
       - type: VulpifyOnDeath
       - type: IncurableVulpification
       - type: VulpifyInitialInfected

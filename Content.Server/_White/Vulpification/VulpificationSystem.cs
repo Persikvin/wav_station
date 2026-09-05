@@ -1,6 +1,6 @@
 using Content.Server.Actions;
+using Content.Server.Stunnable;
 using Content.Shared._White.Blocking;
-using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -13,17 +13,18 @@ using Robust.Shared.Timing;
 namespace Content.Server._White.Vulpification;
 
 /// <summary>
-///     Handles the vulpification infection: spreading it via melee, damaging
-///     the pending infected, and giving the initial infected the turn action.
+///     Handles the vulpification infection: spreading it via melee bites,
+///     timing the infected's transformation, and giving the initial infected
+///     the turn action.
 /// </summary>
 public sealed partial class VulpificationSystem : SharedVulpificationSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly StunSystem _stun = default!;
 
     public override void Initialize()
     {
@@ -31,27 +32,27 @@ public sealed partial class VulpificationSystem : SharedVulpificationSystem
 
         SubscribeLocalEvent<VulpifiedComponent, MeleeHitEvent>(OnMeleeHit,
             after: new[] { typeof(MeleeBlockSystem) });
-        SubscribeLocalEvent<PendingVulpificationComponent, MapInitEvent>(OnPendingMapInit);
-        SubscribeLocalEvent<IncurableVulpificationComponent, MapInitEvent>(OnIncurableMapInit);
+        SubscribeLocalEvent<PendingVulpificationComponent, ComponentStartup>(OnPendingStartup);
+        SubscribeLocalEvent<IncurableVulpificationComponent, ComponentStartup>(OnIncurableStartup);
         SubscribeLocalEvent<IncurableVulpificationComponent, VulpifySelfActionEvent>(OnVulpifySelf);
         SubscribeLocalEvent<VulpifyOnDeathComponent, MobStateChangedEvent>(OnVulpifyOnDeath);
     }
 
-    private void OnIncurableMapInit(EntityUid uid, IncurableVulpificationComponent component, MapInitEvent args)
+    private void OnIncurableStartup(EntityUid uid, IncurableVulpificationComponent component, ComponentStartup args)
     {
         _actions.AddAction(uid, ref component.Action, component.VulpifySelfActionPrototype);
     }
 
-    private void OnPendingMapInit(EntityUid uid, PendingVulpificationComponent component, MapInitEvent args)
+    private void OnPendingStartup(EntityUid uid, PendingVulpificationComponent component, ComponentStartup args)
     {
-        if (_mobState.IsDead(uid))
+        // The initial infected transform right away instead of waiting out the timer.
+        if (_mobState.IsDead(uid) || HasComp<VulpifyInitialInfectedComponent>(uid))
         {
             VulpifyEntity(uid);
             return;
         }
 
-        component.NextTick = _timing.CurTime + TimeSpan.FromSeconds(1f);
-        component.GracePeriod = _random.Next(component.MinInitialInfectedGrace, component.MaxInitialInfectedGrace);
+        component.TransformAt = _timing.CurTime + component.TransformDelay;
     }
 
     private void OnVulpifySelf(EntityUid uid, IncurableVulpificationComponent component, VulpifySelfActionEvent args)
@@ -72,27 +73,39 @@ public sealed partial class VulpificationSystem : SharedVulpificationSystem
         base.Update(frameTime);
         var curTime = _timing.CurTime;
 
-        // Damage the living infected so they eventually drop and turn.
-        var query = EntityQueryEnumerator<PendingVulpificationComponent, DamageableComponent, MobStateComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var damage, out var mobState))
+        var query = EntityQueryEnumerator<PendingVulpificationComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.NextTick > curTime)
+            if (comp.ConversionStarted)
+            {
+                // Still shaking - not a vulp yet.
+                if (curTime < comp.ConvertAt)
+                    continue;
+
+                // Welcome to the pack, little fox.
+                VulpifyEntity(uid);
                 continue;
+            }
 
-            comp.NextTick = curTime + TimeSpan.FromSeconds(1f);
+            if (curTime < comp.TransformAt)
+            {
+                // Still waiting out the infection. Show the odd warning.
+                if (curTime < comp.NextTick)
+                    continue;
 
-            comp.GracePeriod -= TimeSpan.FromSeconds(1f);
-            if (comp.GracePeriod > TimeSpan.Zero)
+                comp.NextTick = curTime + TimeSpan.FromSeconds(1f);
+                if (_random.Prob(comp.InfectionWarningChance))
+                    _popup.PopupEntity(Loc.GetString(_random.Pick(comp.InfectionWarnings)), uid, uid);
                 continue;
+            }
 
-            if (_random.Prob(comp.InfectionWarningChance))
-                _popup.PopupEntity(Loc.GetString(_random.Pick(comp.InfectionWarnings)), uid, uid);
+            // Transformation finale: shake & lock in place, smoke, then change.
+            comp.ConversionStarted = true;
+            comp.ConvertAt = curTime + comp.ConversionTime;
 
-            var multiplier = _mobState.IsCritical(uid, mobState)
-                ? comp.CritDamageMultiplier
-                : 1f;
-
-            _damageable.TryChangeDamage(uid, comp.Damage * multiplier, true, false, damage);
+            _stun.TryStun(uid, comp.ConversionTime, true);
+            Spawn("WizardSmoke", Transform(uid).Coordinates);
+            _popup.PopupEntity(Loc.GetString("vulpification-transform-start"), uid, uid);
         }
     }
 

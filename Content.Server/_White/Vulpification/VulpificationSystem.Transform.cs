@@ -1,4 +1,5 @@
 using Content.Server.Chat.Managers;
+using Content.Server.Damage.Systems;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Humanoid;
 using Content.Server.Mind;
@@ -31,6 +32,7 @@ public sealed partial class VulpificationSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IChatManager _chatMan = default!;
     [Dependency] private readonly NameModifierSystem _nameMod = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     /// <summary>
     ///     The species that vulpified humanoids are transformed into.

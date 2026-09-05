@@ -1,56 +1,48 @@
-using Content.Shared.Damage;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._White.Vulpification;
 
 /// <summary>
-///     Temporary "pending infection" implementation used until full diseases exist.
-///     The infected suffer cellular damage until their DNA is rewritten.
+///     An infected individual that will turn into a vulpkanin after a fixed delay.
+///     The wait ends with a short "conversion finale": the victim is stunned (and
+///     shakes), smoke billows out on and around their tile, then they transform.
+///     Initial infected are converted instantly instead.
 /// </summary>
 [RegisterComponent]
 public sealed partial class PendingVulpificationComponent : Component
 {
     /// <summary>
-    ///     Damage dealt every second to infected individuals.
+    ///     How long after infection the conversion finale begins.
     /// </summary>
-    [DataField("damage")]
-    public DamageSpecifier Damage = new()
-    {
-        DamageDict = new()
-        {
-            { "Cellular", 0.4 },
-        }
-    };
+    [DataField("transformDelay")]
+    public TimeSpan TransformDelay = TimeSpan.FromMinutes(7);
 
     /// <summary>
-    ///     A multiplier for <see cref="Damage"/> applied when the entity is in critical condition.
+    ///     Duration of the conversion finale (shaking, smoke, no movement).
     /// </summary>
-    [DataField("critDamageMultiplier")]
-    public float CritDamageMultiplier = 10f;
-
-    [DataField("nextTick", customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan NextTick;
+    [DataField("conversionTime")]
+    public TimeSpan ConversionTime = TimeSpan.FromSeconds(5);
 
     /// <summary>
-    ///     The amount of time left before the infected begins to take damage.
+    ///     The moment the conversion finale starts.
     /// </summary>
-    [DataField("gracePeriod"), ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan GracePeriod = TimeSpan.Zero;
+    [DataField("transformAt", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    public TimeSpan TransformAt;
 
     /// <summary>
-    ///     The minimum amount of time initial infected have before they start taking infection damage.
+    ///     The moment the victim actually becomes a vulpkanin.
     /// </summary>
-    [DataField]
-    public TimeSpan MinInitialInfectedGrace = TimeSpan.FromMinutes(12.5f);
+    [DataField("convertAt", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    public TimeSpan ConvertAt;
 
     /// <summary>
-    ///     The maximum amount of time initial infected have before they start taking damage.
+    ///     Whether the conversion finale has already started.
     /// </summary>
-    [DataField]
-    public TimeSpan MaxInitialInfectedGrace = TimeSpan.FromMinutes(15f);
+    [DataField("conversionStarted")]
+    public bool ConversionStarted;
 
     /// <summary>
-    ///     The chance each second that a warning will be shown.
+    ///     The chance each second that a warning will be shown during the wait.
     /// </summary>
     [DataField("infectionWarningChance")]
     public float InfectionWarningChance = 0.0166f;
@@ -64,4 +56,10 @@ public sealed partial class PendingVulpificationComponent : Component
         "vulpification-infection-warning",
         "vulpification-infection-underway"
     };
+
+    /// <summary>
+    ///     Throttles how often the warnings are rolled.
+    /// </summary>
+    [DataField("nextTick", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    public TimeSpan NextTick;
 }

@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "license": "Sosi",
+  "copyright": "Sosi",
+  "states": [
+    {
+      "name": "andy"
+    },
+    {
+      "name": "baduborka"
+    },
+    {
+      "name": "bardog"
+    },
+    {
+      "name": "barotravma"
+    },
+    {
+      "name": "eyaofnew"
+    },
+    {
+      "name": "firsteya"
+    },
+    {
+      "name": "furcomp"
+    },
+    {
+      "name": "gribochki"
+    },
+    {
+      "name": "halfyes"
+    },
+    {
+      "name": "hatefurry"
+    },
+    {
+      "name": "mita"
+    },
+    {
+      "name": "notscare"
+    },
+    {
+      "name": "pinktomato"
+    },
+    {
+      "name": "pinkuborka"
+    },
+    {
+      "name": "pizza"
+    },
+    {
+      "name": "povar"
+    },
+    {
+      "name": "psyho"
+    },
+    {
+      "name": "rinworld"
+    },
+    {
+      "name": "screlochka"
+    },
+    {
+      "name": "shahter"
+    },
+    {
+      "name": "sosat14"
+    },
+    {
+      "name": "stohard"
+    },
+    {
+      "name": "stonshard"
+    },
+    {
+      "name": "tipikalsosat"
+    },
+    {
+      "name": "trogat"
+    },
+    {
+      "name": "underopyt"
+    },
+    {
+      "name": "work"
+    },
+    {
+      "name": "kalleca"
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+  - type: entity
+    parent: PosterBase
+    id: andy
+    name: "Я стал ФУРРИ-МАНЬЯКОМ в SPACE STATION 13"
+    description: "Я стал ФУРРИ-МАНЬЯКОМ в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: andy
+              
+  - type: entity
+    parent: PosterBase
+    id: baduborka
+    name: "Я самый ХУДШИЙ УБОРЩИК в SPACE STATION 13"
+    description: "Я самый ХУДШИЙ УБОРЩИК в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: baduborka
+        
+  - type: entity
+    parent: PosterBase
+    id: bardog
+    name: "Я стал БАРМЕНОМ в SPACE STATION 13"
+    description: "Я стал БАРМЕНОМ в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi 
+        state: bardog
+       
+  - type: entity
+    parent: PosterBase
+    id: barotravma
+    name: "Вся суть BAROTRAUMA за 9 минут"
+    description: "Вся суть BAROTRAUMA за 9 минут"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: barotravma
+
+  - type: entity
+    parent: PosterBase
+    id: eyaofnew
+    name: "Space Station 13 глазами новичка в 2024 году"
+    description: "Space Station 13 глазами новичка в 2024 году"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: eyaofnew
+
+  - type: entity
+    parent: PosterBase
+    id: firsteya
+    name: "Первые смены в SPACE STATION 13 глазами НОВИЧКА"
+    description: "Первые смены в SPACE STATION 13 глазами НОВИЧКА"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: firsteya
+
+  - type: entity
+    parent: PosterBase
+    id: furcomp
+    name: "СТРИМ"
+    description: "СТРИМ"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: furcomp
+
+  - type: entity
+    parent: PosterBase
+    id: gribochki
+    name: "Я ОТРАВИЛ ВСЮ СТАНЦИЮ В SPACE STATION 13"
+    description: "Я ОТРАВИЛ ВСЮ СТАНЦИЮ В SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: gribochki
+
+  - type: entity
+    parent: PosterBase
+    id: halfyes
+    name: "НИКОГДА не доверяй ИНЖЕНЕРАМ в Space Station 13"
+    description: "НИКОГДА не доверяй ИНЖЕНЕРАМ в Space Station 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: halfyes
+
+  - type: entity
+    parent: PosterBase
+    id: hatefurry
+    name: "ВПЕРВЫЕ ЗАШЕЛ НА ФУРРИ РП СЕРВЕР в SPACE STATION 13"
+    description: "ВПЕРВЫЕ ЗАШЕЛ НА ФУРРИ РП СЕРВЕР в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: hatefurry
+
+  - type: entity
+    parent: PosterBase
+    id: mita
+    name: "КАК УКРАСТЬ ТРУСЫ МИТЫ В MISIDE (нарезка)"
+    description: "КАК УКРАСТЬ ТРУСЫ МИТЫ В MISIDE (нарезка)"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: mita
+
+  - type: entity
+    parent: PosterBase
+    id: notscare
+    name: "Вся суть FEARS TO FATHOM за 10 минут"
+    description: "Вся суть FEARS TO FATHOM за 10 минут"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: notscare
+
+  - type: entity
+    parent: PosterBase
+    id: pinktomato
+    name: "НИКОГДА не доверяй ИНЖЕНЕРАМ в Space Station 13"
+    description: "НИКОГДА не доверяй ИНЖЕНЕРАМ в Space Station 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: pinktomato
+
+  - type: entity
+    parent: PosterBase
+    id: pinkuborka
+    name: "Я стал РОЗОВОЙ ФУРРИ в SPACE STATION 13"
+    description: "Я стал РОЗОВОЙ ФУРРИ в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: pinkuborka
+
+  - type: entity
+    parent: PosterBase
+    id: pizza
+    name: "Я стал ПОВАРОМ в SPACE STATION 13"
+    description: "Я стал ПОВАРОМ в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: pizza
+
+  - type: entity
+    parent: PosterBase
+    id: povar
+    name: "Никогда не доверяй ВАМПИРАМ в Space Station 13"
+    description: "Никогда не доверяй ВАМПИРАМ в Space Station 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: povar
+
+  - type: entity
+    parent: PosterBase
+    id: psyho
+    name: "ШКОЛЬНИКИ ПСИХОЛОГИ на КОСМИЧЕСКОЙ СТАНЦИИ 14 (Space Station 14/SS14)"
+    description: "ШКОЛЬНИКИ ПСИХОЛОГИ на КОСМИЧЕСКОЙ СТАНЦИИ 14 (Space Station 14/SS14)"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: psyho
+
+  - type: entity
+    parent: PosterBase
+    id: rinworld
+    name: "Вся суть Rimworld за 3 минуты"
+    description: "Вся суть Rimworld за 3 минуты"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: rinworld 
+
+  - type: entity
+    parent: PosterBase
+    id: screlochka
+    name: "Я САМЫЙ ХУДШИЙ ИНЖЕНЕР в SPACE STATION 13"
+    description: "Я САМЫЙ ХУДШИЙ ИНЖЕНЕР в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: screlochka 
+
+  - type: entity
+    parent: PosterBase
+    id: shahter
+    name: "Я стал ШАХТЁРОМ в SPACE STATION 13"
+    description: "Я стал ШАХТЁРОМ в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: shahter 
+
+  - type: entity
+    parent: PosterBase
+    id: sosat14
+    name: "Я ПОИГРАЛ В SPACE STATION 14 И СОШЕЛ С УМА"
+    description: "Я ПОИГРАЛ В SPACE STATION 14 И СОШЕЛ С УМА"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: sosat14 
+
+  - type: entity
+    parent: PosterBase
+    id: stohard
+    name: "100 Дней Хардкора в Space Station 13"
+    description: "100 Дней Хардкора в Space Station 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: stohard 
+
+  - type: entity
+    parent: PosterBase
+    id: stonshard
+    name: "Вся суть STONESHARD за 3 минуты"
+    description: "Вся суть STONESHARD за 3 минуты"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: stonshard 
+
+  - type: entity
+    parent: PosterBase
+    id: tipikalsosat
+    name: "ТИПИЧНЫЙ день в SPACE STATION 13"
+    description: "ТИПИЧНЫЙ день в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: tipikalsosat 
+
+  - type: entity
+    parent: PosterBase
+    id: trogat
+    name: "Я САМЫЙ ХУДШИЙ ВРАЧ В SPACE STATION 13"
+    description: "Я САМЫЙ ХУДШИЙ ВРАЧ В SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: trogat 
+
+  - type: entity
+    parent: PosterBase
+    id: underopyt
+    name: "Я стал подопытной фурри в SPACE STATION 13"
+    description: "Я стал подопытной фурри в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: underopyt 
+
+  - type: entity
+    parent: PosterBase
+    id: work
+    name: "ПЫТАЮСЬ устроиться на работу в SPACE STATION 13"
+    description: "ПЫТАЮСЬ устроиться на работу в SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: work 
+
+  - type: entity
+    parent: PosterBase
+    id: kalleca
+    name: "Я САМЫЙ ХУДШИЙ ШАХТЁР В SPACE STATION 13"
+    description: "Я САМЫЙ ХУДШИЙ ШАХТЁР В SPACE STATION 13"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\videoposters.rsi
+        state: kalleca 

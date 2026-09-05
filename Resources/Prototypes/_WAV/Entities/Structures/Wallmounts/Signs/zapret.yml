@@ -1,0 +1,9 @@
+  - type: entity
+    parent: PosterBase
+    id: stathamzapret
+    name: "Самое главное правило"
+    description: "Тупой мем про запрет споров с админами"
+    components:
+      - type: Sprite
+        sprite: _WAV\Structures\Wallmounts\zapret.rsi
+        state: zapret

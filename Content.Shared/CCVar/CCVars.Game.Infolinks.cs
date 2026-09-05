@@ -8,25 +8,25 @@ public sealed partial class CCVars
     ///     Link to Discord server to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksDiscord =
-        CVarDef.Create("infolinks.discord", "https://discord.com/invite/vHQtueFmgu", CVar.SERVER | CVar.REPLICATED); // WD EDIT
+        CVarDef.Create("infolinks.discord", "https://discord.gg/dvXG3S5vv7", CVar.SERVER | CVar.REPLICATED); // WAV EDIT
 
     /// <summary>
     ///     Link to website to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksForum =
-        CVarDef.Create("infolinks.forum", "https://forum.wwdp.ee/", CVar.SERVER | CVar.REPLICATED); // WD EDIT
+        CVarDef.Create("infolinks.forum", "", CVar.SERVER | CVar.REPLICATED); // WAV EDIT
 
     /// <summary>
     ///     Link to GitHub page to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksGithub =
-        CVarDef.Create("infolinks.github", "https://github.com/WWhiteDreamProject/wwdpublic", CVar.SERVER | CVar.REPLICATED); // WD EDIT
+        CVarDef.Create("infolinks.github", "https://github.com/Persikvin/wav_station/", CVar.SERVER | CVar.REPLICATED); // WAV EDIT
 
     /// <summary>
     ///     Link to website to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksWebsite =
-        CVarDef.Create("infolinks.website", "", CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("infolinks.website", "https://www.twitch.tv/andrusha_wav", CVar.SERVER | CVar.REPLICATED); // WAV EDIT
 
     /// <summary>
     ///     Link to wiki to show in the launcher.

@@ -27,10 +27,10 @@
   - !type:CharacterEmployerRequirement
     employers:
     - NanoTrasen
-  # WD EDIT START
+  # WAV EDIT START
   - !type:CharacterOverallTimeRequirement
-    min: 7200
-  # WD EDIT END
+     min: 7200
+  # WAV EDIT END
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

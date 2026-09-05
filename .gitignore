@@ -307,5 +307,8 @@ Resources/MapImages
 # Direnv stuff
 .direnv/
 
+# Agent stuff
+.agents/
+
 # Changelog package lock
 package-lock.json

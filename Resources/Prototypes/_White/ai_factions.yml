@@ -13,3 +13,16 @@
   - AllHostile
   - Wizard
   - Dragon
+
+# WD Vulpification
+- type: npcFaction
+  id: Vulpification
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - SimpleHostile
+  - Zombie
+  - Blob
+  - Changeling
+  - Shadowling
+  - AllHostile

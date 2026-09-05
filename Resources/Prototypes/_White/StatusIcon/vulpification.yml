@@ -1,0 +1,30 @@
+# WD Vulpification
+- type: factionIcon
+  id: VulpifyInitialInfectedFaction
+  priority: 11
+  locationPreference: left
+  iconOffset: 0, 0.9 # WD edit: nudge up & left so it doesn't cover the face
+  iconScale: 0.75 # WD edit: draw smaller
+  showTo:
+    components:
+    - ShowAntagIcons
+    - VulpifyInitialInfected
+    - Vulpified # WD edit
+  icon:
+    sprite: /Textures/Clothing/Mask/fox.rsi
+    state: icon
+
+- type: factionIcon
+  id: VulpifiedFaction
+  priority: 11
+  locationPreference: left
+  iconOffset: 0, 0.9 # WD edit: nudge up & left so it doesn't cover the face
+  iconScale: 0.75 # WD edit: draw smaller
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Vulpified
+    - VulpifyInitialInfected
+  icon:
+    sprite: /Textures/Clothing/Mask/fox.rsi
+    state: icon

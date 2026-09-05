@@ -1,0 +1,22 @@
+# WD Vulpification
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVulpifyInitialInfected
+  name: Vulpify Initial Infected Role
+  components:
+  - type: MindRole
+    antagPrototype: VulpifiedInitialInfected
+    exclusiveAntag: true
+    roleType: TeamAntagonist
+  - type: VulpifyInitialInfectedRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVulpified
+  name: Vulpified Role
+  components:
+  - type: MindRole
+    antagPrototype: Vulpified
+    exclusiveAntag: true
+    roleType: TeamAntagonist
+  - type: VulpifyRole

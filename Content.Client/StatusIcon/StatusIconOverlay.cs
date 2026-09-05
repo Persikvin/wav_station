@@ -117,7 +117,25 @@ public sealed class StatusIconOverlay : Overlay
                     handle.UseShader(_unshadedShader);
 
                 var position = new Vector2(xOffset, yOffset);
-                handle.DrawTexture(texture, position);
+                position += proto.IconOffset; // WD EDIT: per-icon positional nudge
+
+                if (MathHelper.CloseToPercent(proto.IconScale, 1f))
+                {
+                    handle.DrawTexture(texture, position);
+                }
+                else
+                {
+                    // WD EDIT: draw the icon scaled about its centre.
+                    var iconCentre = texture.Size / 2f / EyeManager.PixelsPerMeter;
+                    var scaledPos = position + iconCentre * (1f - proto.IconScale);
+                    var iconMatrix = Matrix3x2.Multiply(
+                        Matrix3x2.Multiply(Matrix3Helpers.CreateTranslation(-iconCentre),
+                            Matrix3Helpers.CreateScale(proto.IconScale, proto.IconScale)),
+                        Matrix3Helpers.CreateTranslation(scaledPos));
+                    handle.SetTransform(Matrix3x2.Multiply(iconMatrix, matty));
+                    handle.DrawTexture(texture, Vector2.Zero);
+                    handle.SetTransform(matty);
+                }
             }
 
             handle.UseShader(null);

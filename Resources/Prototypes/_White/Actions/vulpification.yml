@@ -1,0 +1,14 @@
+# WD Vulpification
+- type: entity
+  id: ActionTurnVulpified
+  name: Стать вульпой!
+  description: Принять своё новое Я и сделать пушистиками всех вокруг!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: /Textures/Clothing/Mask/fox.rsi
+      state: icon
+    event: !type:VulpifySelfActionEvent

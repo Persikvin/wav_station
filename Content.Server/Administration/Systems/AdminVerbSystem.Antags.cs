@@ -1,5 +1,6 @@
 using Content.Server._Goobstation.Devil.GameTicking.Rules;
 using Content.Server._White.GameTicking.Rules.Components;
+using Content.Server._White.Vulpification;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
@@ -20,6 +21,7 @@ public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ZombieSystem _zombie = default!;
+    [Dependency] private readonly VulpificationSystem _vulpification = default!; // WD EDIT
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultTraitorRule = "Traitor";
@@ -45,6 +47,9 @@ public sealed partial class AdminVerbSystem
     // WD EDIT START
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultBloodCultRule = "BloodCult";
+
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultVulpificationRule = "Vulpification";
     // WD EDIT END
 
     [ValidatePrototypeId<StartingGearPrototype>]
@@ -212,6 +217,36 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-blood-cultist"),
         };
         args.Verbs.Add(cultist);
+        // WD EDIT END
+
+        // WD EDIT START - Vulpification
+        Verb initialVulpified = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-initial-vulpified"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Mask/fox.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<VulpificationRuleComponent>(targetPlayer, DefaultVulpificationRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-initial-vulpified"),
+        };
+        args.Verbs.Add(initialVulpified);
+
+        Verb vulpified = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-vulpified"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Animals/fox.rsi"), "fox"),
+            Act = () =>
+            {
+                _vulpification.VulpifyEntity(args.Target);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-vulpified"),
+        };
+        args.Verbs.Add(vulpified);
         // WD EDIT END
 
         Verb shadowling = new()

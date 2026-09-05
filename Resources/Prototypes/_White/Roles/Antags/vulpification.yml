@@ -1,0 +1,13 @@
+- type: antag
+  id: VulpifiedInitialInfected
+  name: roles-antag-vulpify-initial-infected-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-vulpify-initial-infected-objective
+
+- type: antag
+  id: Vulpified
+  name: roles-antag-vulpified-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-vulpified-objective

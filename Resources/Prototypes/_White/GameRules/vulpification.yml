@@ -1,0 +1,67 @@
+- type: entity
+  id: Vulpification
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 20
+    delay:
+      min: 900
+      max: 1200
+  - type: VulpificationRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ VulpifiedInitialInfected ]
+      max: 3
+      playerRatio: 10
+      blacklist:
+        components:
+        - VulpificationImmune
+        - AntagImmune
+      briefing:
+        text: vulpification-patientzero-role-greeting
+        color: Orange
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      components:
+      - type: PendingVulpification
+      - type: VulpifyOnDeath
+      - type: IncurableVulpification
+      - type: VulpifyInitialInfected
+      mindRoles:
+      - MindRoleVulpifyInitialInfected
+  - type: DynamicRuleCost
+    cost: 20
+
+- type: entity
+  id: VulpificationOutbreak
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    earliestStart: 90
+    minimumPlayers: 30
+    weight: 1
+    duration: 1
+  - type: VulpificationRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ VulpifiedInitialInfected ]
+      max: 3
+      playerRatio: 10
+      blacklist:
+        components:
+        - VulpificationImmune
+        - AntagImmune
+      briefing:
+        text: vulpification-patientzero-role-greeting
+        color: Orange
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      components:
+      - type: PendingVulpification
+        minInitialInfectedGrace: 300
+        maxInitialInfectedGrace: 450
+      - type: VulpifyOnDeath
+      - type: IncurableVulpification
+      - type: VulpifyInitialInfected
+      mindRoles:
+      - MindRoleVulpifyInitialInfected
+  - type: DynamicRuleCost
+    cost: 20

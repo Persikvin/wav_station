@@ -4,6 +4,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
+using System.Numerics;
 
 namespace Content.Shared.StatusIcon;
 
@@ -63,6 +64,21 @@ public partial class StatusIconData : IComparable<StatusIconData>
     /// </summary>
     [DataField]
     public StatusIconLocationPreference LocationPreference = StatusIconLocationPreference.None;
+
+    // WD EDIT START
+    /// <summary>
+    /// An extra positional offset applied to the icon in world units, so icons can be nudged
+    /// around (e.g. away from a mob's face). X positive = right, Y positive = up.
+    /// </summary>
+    [DataField]
+    public Vector2 IconOffset = Vector2.Zero;
+
+    /// <summary>
+    /// A scale applied to the icon around its center (1 = native size, 0.75 = 75%).
+    /// </summary>
+    [DataField]
+    public float IconScale = 1f;
+    // WD EDIT END
 
     /// <summary>
     /// The layer the icon is displayed on. Mod is drawn above Base. Base | Mod

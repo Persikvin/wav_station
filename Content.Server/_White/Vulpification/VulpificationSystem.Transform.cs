@@ -4,6 +4,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Humanoid;
 using Content.Server.Mind;
 using Content.Server.Mind.Commands;
+using Content.Shared.Clumsy;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Ghost.Roles.Components;
@@ -58,6 +59,9 @@ public sealed partial class VulpificationSystem
             return;
 
         var vulpified = AddComp<VulpifiedComponent>(target);
+
+        // Vulps are as clumsy as clowns: give them the Clumsy component.
+        AddComp<ClumsyComponent>(target);
 
         // No longer waiting to become a vulpkanin.
         // Requires deferral because this may be the event that called VulpifyEntity in the first place.

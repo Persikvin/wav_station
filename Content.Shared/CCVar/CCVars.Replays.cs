@@ -17,7 +17,6 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> ReplayAutoRecord =
         CVarDef.Create("replay.auto_record", true, CVar.SERVERONLY);
 
-public static readonly CVarDef<long> ReplayMaxCompressedSize = CVarDef.Create("replay.max_compressed_size", 1024L * 2048, CVar.ARCHIVE);
     /// <summary>
     ///     The file name to record automatic replays to. The path is relative to <see cref="CVars.ReplayDirectory"/>.
     /// </summary>

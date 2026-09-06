@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: WavLobbyMusic
+  files:
+    - /Audio/_WAV/Lobby/death_wav.ogg
+    - /Audio/_WAV/Lobby/jija_wav.ogg
+    - /Audio/_WAV/Lobby/caw_wav.ogg

@@ -1,0 +1,39 @@
+  - type: entity
+    parent: PosterBase
+    id: wantedBIGandrey
+    name: "Плакат розыска"
+    description: "Разыскивается серийный пират Андрей Помидоров"
+    components:
+      - type: Sprite
+        sprite: _WAV/Structures/Wallmounts/wanted-l.rsi
+        state: wantedBIGandrey
+
+  - type: entity
+    parent: PosterBase
+    id: wantedSMALLandrey
+    name: "Плакат розыска"
+    description: "Разыскивается серийный пират Андрей Помидоров"
+    components:
+      - type: Sprite
+        sprite: _WAV/Structures/Wallmounts/wanted-s.rsi
+        state: wantedSMALLandrey
+
+  - type: entity
+    parent: PosterBase
+    id: wantedBIGsuns
+    name: "Плакат розыска"
+    description: "Разыскивается любитель присунуть косточку скелет Санс!"
+    components:
+      - type: Sprite
+        sprite: _WAV/Structures/Wallmounts/wanted-l.rsi
+        state: wantedBIGsuns
+
+  - type: entity
+    parent: PosterBase
+    id: wantedSMALLsuns
+    name: "Плакат розыска"
+    description: "Разыскивается любитель присунуть косточку скелет Санс!"
+    components:
+      - type: Sprite
+        sprite: _WAV/Structures/Wallmounts/wanted-s.rsi
+        state: wantedSMALLsuns

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "license": "Sosi",
+  "copyright": "Sosi",
+  "states": [
+    {
+      "name": "wantedBIGandrey"
+    },
+    {
+      "name": "wantedBIGsuns"
+    },
+    {
+      "name": "NULL_BIG"
+    }
+
+  ]
+}

@@ -1,0 +1,39 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterBigWanted
+  name: random big wanted spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _WAV/Structures/Wallmounts/wanted-l.rsi
+      state: NULL_BIG
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - wantedBIGandrey
+    - wantedBIGsuns
+    chance: 0.95
+    rarePrototypes:
+    - PosterBroken
+    rareChance: 0.05
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterSmallWanted
+  name: random small wanted spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _WAV/Structures/Wallmounts/wanted-s.rsi
+      state: NULL_SMALL
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - wantedSMALLandrey
+    - wantedSMALLsuns
+    chance: 0.95
+    rarePrototypes:
+    - PosterBroken
+    rareChance: 0.05

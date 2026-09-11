@@ -4,6 +4,7 @@
   name: job-name-maid
   description: job-description-maid
   playTimeTracker: JobMaid
+  whitelisted: true
   requirements:
   #- !type:CharacterDepartmentTimeRequirement
   #  department: Medical
@@ -11,12 +12,12 @@
   #- !type:CharacterDepartmentTimeRequirement
   #  department: Command
   #  min: 72000 # 20 ch
-  - !type:CharacterOverallTimeRequirement
-    min: 7200
+  #- !type:CharacterOverallTimeRequirement
+  #  min: 7200
   - !type:CharacterSpeciesRequirement
     species:
     - Human
-    - Felinid
+    - Vulpkanin
     - Harpy
   - !type:CharacterSexRequirement
     sex:

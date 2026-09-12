@@ -5,5 +5,15 @@
     description: "Тупой мем про запрет споров с админами"
     components:
       - type: Sprite
-        sprite: _WAV\Structures\Wallmounts\zapret.rsi
+        sprite: _WAV/Structures/Wallmounts/zapret.rsi
         state: zapret
+
+  - type: entity
+    parent: PosterBase
+    id: zapret_wav
+    name: "За это заплатили 1 000 руб"
+    description: "Андрей не вывозит, т.ч. подкупает администрацию"
+    components:
+      - type: Sprite
+        sprite: _WAV/Structures/Wallmounts/zapret_wav.rsi
+        state: zapret_wav

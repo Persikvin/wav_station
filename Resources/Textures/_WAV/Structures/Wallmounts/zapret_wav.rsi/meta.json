@@ -1,14 +1,14 @@
 {
   "version": 1,
   "size": {
-    "x": 278,
-    "y": 312
+    "x": 220,
+    "y": 220
   },
   "license": "Sosi",
   "copyright": "Sosi",
   "states": [
     {
-      "name": "zapret"
+      "name": "zapret_wav"
     }
   ]
 }
